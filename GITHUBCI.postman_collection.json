@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "4128a0d2-4192-49fa-80f6-0af9738df628",
+		"name": "GITHUBCI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping!",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Pong?', function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:42069/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login.correct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Correct login', function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "aled",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "workshop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login.missingCredentials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Missing credentials', function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:42069/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login.missingUsername",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Missing Username', function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "workshop",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login.missingPassword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Missing password', function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "aled",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teapot",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Are you a teapot?\", function () {",
+							"    pm.response.to.have.status(418);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:42069/teapot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"teapot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pupper",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Got any puppers to show ?\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:42069/pupper",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"pupper"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register.correct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Correct registration form\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register.emptyUsername",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Registration - Empty username\", function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register.emptyPassword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Registration - Empty username\", function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register.emptyEmail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Registration - Empty username\", function () {",
+							"    pm.response.to.have.status(400);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:42069/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "42069",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "someUsername",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "somePassword",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "some@email.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
