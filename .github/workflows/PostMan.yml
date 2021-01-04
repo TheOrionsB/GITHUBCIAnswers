@@ -22,6 +22,9 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: Install newman
-        run: npm install newman
-      - name: Run tests
-        run: newman run GITHUBCI.postman_collection.json
+        run: npm install -g newman
+      - name: Run API & PostMan tests
+        run: |
+          npm start & sleep 2
+          newman run ./GITHUBCI.postman_collection.json
+          kill 9 `lsof -i:42069 -t`
