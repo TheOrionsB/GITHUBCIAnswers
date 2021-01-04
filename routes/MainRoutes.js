@@ -43,7 +43,7 @@ Router.get('/pupper', (req, res) => {
 })
 
 Router.get('/teapot', (req, res) => {
-    res.status(415).send({status: 415, message:'I\'m a teapot.'});
+    res.status(418).send({status: 418, message:'I\'m a teapot.'});
     console.log('[🫖] -- I\'m a teapot dude');
 });
 
