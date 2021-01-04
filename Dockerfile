@@ -1,0 +1,8 @@
+FROM node:12-alpine
+WORKDIR /GITHUBCI
+ADD . /GITHUBCI
+COPY . .
+RUN npm install
+ENV PORT=42069
+EXPOSE 42069
+CMD ["npm", "start"]
