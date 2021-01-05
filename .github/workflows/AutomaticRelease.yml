@@ -1,6 +1,6 @@
 name: release-api
 on:
-  push:
+  create:
     tags: 'v*'
 
 jobs:
