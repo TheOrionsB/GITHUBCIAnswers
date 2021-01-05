@@ -1,10 +1,8 @@
 name: "release-api"
-
 on:
   push:
     tags:
-      - "APIv*"
-  workflow_dispatch:
+      - "v*"
   
 jobs:
   release-api:
