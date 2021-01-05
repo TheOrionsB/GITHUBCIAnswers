@@ -4,12 +4,14 @@ on:
   push:
     tags:
       - "APIv*"
+  workflow_dispatch:
+  
 jobs:
   release-api:
     name: "API Automatic release"
     runs-on: "ubuntu-latest"
     steps:
-    - name: "Releae"
+    - name: "Release"
       run: |
         echo "Prepairing realse"
     - uses: "marvinpinto/action-automatic-releases@latest"
