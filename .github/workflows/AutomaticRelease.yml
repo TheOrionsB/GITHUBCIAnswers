@@ -1,7 +1,6 @@
 name: release-api
 on:
   push:
-    branches: [ main ]
     tags: "v*"
 
 jobs:
