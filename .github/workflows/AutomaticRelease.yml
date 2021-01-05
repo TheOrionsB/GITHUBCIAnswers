@@ -1,7 +1,7 @@
 name: release-api
 on:
   push:
-    tags: 'release'
+    tags: 'v*'
 
 jobs:
   release-api:
