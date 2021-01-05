@@ -13,5 +13,5 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', router);
 
 app.listen(port, () => {
-    console.log(`[✅] -- v1.01 Server listening on http://localhost:${port} Have fun! 😊`)
+    console.log(`[✅] -- v1.01  Server listening on http://localhost:${port} Have fun! 😊`)
 });
