@@ -15,10 +15,11 @@ jobs:
 
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.1.0
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         automatic_release_tag: "latest"
         files: |
           public
