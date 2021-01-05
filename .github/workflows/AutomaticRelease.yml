@@ -2,7 +2,7 @@ name: release-api
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 jobs:
   release-api:
     name: "API Automatic release"
