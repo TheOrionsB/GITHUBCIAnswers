@@ -1,10 +1,9 @@
-name: release-api
+name: "release-api"
 
 on:
   push:
     tags:
       - "APIv*"
-
 jobs:
   release-api:
     name: "API Automatic release"
